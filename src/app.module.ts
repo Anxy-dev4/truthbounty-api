@@ -365,7 +365,6 @@ async function createThrottlerStorage(
     // V2-BE-113: TypeORM-side Transactional Outbox
     V2OutboxModule,
     CredentialRotationModule,
-    // UX-BE-004 (#595): protected operations, safe-retry and audit interfaces
     OperationsModule,
   ],
   controllers: [AppController],
@@ -374,15 +373,15 @@ async function createThrottlerStorage(
     EnvironmentValidationService,
     {
       provide: APP_GUARD,
-      useClass: GlobalAuthGuard,
-    },
-    {
-      provide: APP_GUARD,
       useClass: WalletThrottlerGuard,
     },
     {
       provide: APP_GUARD,
-      useClass: IdempotencyGuard,
+      useClass: GlobalAuthGuard,
+    },
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: AuditLoggingInterceptor,
     },
     {
       provide: APP_INTERCEPTOR,
