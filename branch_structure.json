@@ -1,0 +1,21 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "main",
+    "origin",
+    "security/issue-618-prewave-be-022-reconcile-notification-event",
+    "security/issue-632-prewave-be-036-add-realtime-backpressure-and"
+  ],
+  "parent": {
+    "main": null,
+    "origin": "main",
+    "security/issue-618-prewave-be-022-reconcile-notification-event": "main",
+    "security/issue-632-prewave-be-036-add-realtime-backpressure-and": "main"
+  },
+  "order": [
+    "main",
+    "origin",
+    "security/issue-618-prewave-be-022-reconcile-notification-event",
+    "security/issue-632-prewave-be-036-add-realtime-backpressure-and"
+  ]
+}
